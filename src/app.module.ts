@@ -4,6 +4,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CountriesModule } from './countries/countries.module';
+import { CalendarModule } from './calendar/calendar.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -23,6 +25,8 @@ import { CountriesModule } from './countries/countries.module';
       inject: [ConfigService],
     }),
     CountriesModule,
+    CalendarModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
