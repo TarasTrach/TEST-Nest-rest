@@ -1,0 +1,110 @@
+{
+  "auth": {
+    "basic": {
+      "password": "rvtnmvfhzyf01",
+      "username": "test@email.com"
+    },
+    "type": "basic"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [""],
+        "packages": {},
+        "type": "text/javascript"
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "exec": [""],
+        "packages": {},
+        "type": "text/javascript"
+      }
+    }
+  ],
+  "info": {
+    "_exporter_id": "34022282",
+    "_postman_id": "824b6ab9-aa18-4ab3-bda9-80b8de2801aa",
+    "name": "Test endpoints 2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Available",
+      "request": {
+        "header": [],
+        "method": "GET",
+        "url": "localhost:3001/test"
+      },
+      "response": []
+    },
+    {
+      "name": "Info",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "body": {
+          "mode": "raw",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": ""
+        },
+        "header": [],
+        "method": "GET",
+        "url": "{{API_URL}}/countries/"
+      },
+      "response": []
+    },
+    {
+      "name": "User Get",
+      "request": {
+        "header": [],
+        "method": "GET",
+        "url": "{{API_URL}}/users/3"
+      },
+      "response": []
+    },
+    {
+      "name": "User Create",
+      "request": {
+        "body": {
+          "mode": "raw",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": "{\n  \"name\": \"Taras\",\n  \"email\": \"taras@example.com\"\n}"
+        },
+        "header": [],
+        "method": "POST",
+        "url": "{{API_URL}}/users"
+      },
+      "response": []
+    },
+    {
+      "name": "User add Holiday",
+      "request": {
+        "body": {
+          "mode": "raw",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": "{\n  \"countryCode\": \"US\",\n  \"year\": 2025,\n  \"holidays\": [\"New Year's Day\", \"Independence Day\"]\n}"
+        },
+        "header": [],
+        "method": "POST",
+        "url": "{{API_URL}}/users/1/calendar/holidays"
+      },
+      "response": []
+    }
+  ]
+}
